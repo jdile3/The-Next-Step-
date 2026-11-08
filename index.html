@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>THE NEXT STEP | Practical, Zero-Judgment Tools</title>
   <meta name="description" content="Meet people where they are. Practical tools for cash flow, gym progression, and rebuilding life." />
-  <link rel="icon" type="image/png" sizes="192x192" href="./budget/icon-192.png" />
+  <meta name="theme-color" content="#061629" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png" />
+  <link rel="manifest" href="./manifest.json" />
   
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +49,7 @@
       box-shadow: 0 0 50px -10px rgba(56, 189, 248, 0.2);
     }
   </style>
-<script src="/_aistudio-iframe.js?v=1f94f900"></script></head>
+</head>
 <body class="bg-[#061629] text-white font-sans antialiased selection:bg-skyGlow selection:text-midnight">
 
   <!-- ================= TOP BAR ================= -->
@@ -441,6 +444,11 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./sw.js').catch(function () {});
+      });
+    }
   </script>
 </body>
 </html>
