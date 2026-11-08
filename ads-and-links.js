@@ -12,12 +12,12 @@ window.TNS_MONETIZATION_CONFIG = {
   // When ready, paste your Stripe Payment Link inside the quotes below.
   // In Stripe Dashboard -> "After payment" -> Redirect to:
   //   https://YOUR-WEBSITE-URL/budget.html?tns_unlock=TNS_STRIPE_VERIFIED_2026
-  STRIPE_PAYMENT_LINK_URL: https://dashboard.stripe.com/acct_1UZYNeJSHcGgHiIe/workbench/inspector/pmc_1UZYOAJSHcGgHiIewnpseSA7"",
+  STRIPE_PAYMENT_LINK_URL: "https://buy.stripe.com/3cIfZiaWi0MYaBz8YNfjG00",
 
   // 2. YOUR OFFICIAL WEBSITE / APP URL (For QR Codes & Share Links)
   // Optional: Paste your live GitHub Pages or domain URL here.
   // If left blank (""), the app automatically uses whatever website URL it is hosted on!
-  OFFICIAL_WEBSITE_URL: "https://jdile3.github.io/The-Next-Step-/budget.html",
+  OFFICIAL_WEBSITE_URL: "https://jdile3.github.io/The-Next-Step-/",
 
   // 3. GOOGLE ADSENSE (Optional Automatic Display Ads)
   // Set enabled: true and paste your AdSense Publisher ID & Slot ID when ready.
@@ -37,7 +37,7 @@ window.TNS_MONETIZATION_CONFIG = {
       title: "Save Up to 25¢/Gal on Gas & Groceries",
       description: "Earn automatic cash back at Shell, Circle K, Speedway, and local grocery stores.",
       ctaText: "Claim Free Bonus",
-      ctaUrl: "https://i.capitalone.com/J05BNs9FX" // <-- PASTE YOUR REFERRAL OR SPONSOR LINK HERE
+      ctaUrl: "" // <-- PASTE YOUR REFERRAL OR SPONSOR LINK HERE
     },
     {
       id: "sponsor-high-yield",
@@ -45,13 +45,13 @@ window.TNS_MONETIZATION_CONFIG = {
       title: "Stop Getting Paid 0.01% by Your Bank",
       description: "Get paid up to 2 days early with zero monthly maintenance or overdraft fees.",
       ctaText: "Learn More",
-      ctaUrl: "https://cash.app/refer/91VWVRV" // <-- PASTE YOUR REFERRAL OR SPONSOR LINK HERE
+      ctaUrl: "" // <-- PASTE YOUR REFERRAL OR SPONSOR LINK HERE
     },
     {
       id: "sponsor-tns-pro",
       tag: "The Next Step Pro",
       title: "Remove All Ads & Unlock Unlimited Accounts",
-      description: "One-time $4.99 lifetime unlock. Zero monthly subscriptions. 100% private.",
+      description: "One-time $6.99 lifetime unlock. Zero monthly subscriptions. 100% private.",
       ctaText: "Unlock Pro",
       ctaUrl: "INTERNAL_UPGRADE"
     }

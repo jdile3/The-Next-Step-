@@ -17,10 +17,10 @@
     <script>
       window.TNS_MONETIZATION_CONFIG = {
         // 1. Your Stripe Payment Link (Paste your Stripe checkout URL inside the quotes when ready)
-        STRIPE_PAYMENT_LINK_URL: "",
+        STRIPE_PAYMENT_LINK_URL: "https://buy.stripe.com/3cIfZiaWi0MYaBz8YNfjG00",
 
         // 2. Your Live Website URL (Optional: Paste your GitHub Pages or domain URL here)
-        OFFICIAL_WEBSITE_URL: "",
+        OFFICIAL_WEBSITE_URL: "https://jdile3.github.io/The-Next-Step-/",
 
         // 3. Google AdSense (Optional: Set enabled to true and paste your IDs when ready)
         ADSENSE_CONFIG: {
@@ -51,7 +51,7 @@
             id: "sponsor-tns-pro",
             tag: "The Next Step Pro",
             title: "Remove All Ads & Unlock Unlimited Accounts",
-            description: "One-time $4.99 lifetime unlock. Zero monthly subscriptions. 100% private.",
+            description: "One-time $6.99 lifetime unlock. Zero monthly subscriptions. 100% private.",
             ctaText: "Unlock Pro",
             ctaUrl: "INTERNAL_UPGRADE"
           }
@@ -17885,7 +17885,7 @@ function getWindowConfig() {
 	return {};
 }
 var winCfg = getWindowConfig();
-var STRIPE_PAYMENT_LINK_URL = typeof winCfg.STRIPE_PAYMENT_LINK_URL === "string" ? winCfg.STRIPE_PAYMENT_LINK_URL : "";
+var STRIPE_PAYMENT_LINK_URL = typeof winCfg.STRIPE_PAYMENT_LINK_URL === "string" && winCfg.STRIPE_PAYMENT_LINK_URL ? winCfg.STRIPE_PAYMENT_LINK_URL : "https://buy.stripe.com/3cIfZiaWi0MYaBz8YNfjG00";
 var OFFICIAL_WEBSITE_URL = typeof winCfg.OFFICIAL_WEBSITE_URL === "string" ? winCfg.OFFICIAL_WEBSITE_URL : "";
 var ADSENSE_CONFIG = {
 	enabled: winCfg.ADSENSE_CONFIG?.enabled ?? false,
@@ -17913,7 +17913,7 @@ var SPONSOR_BANNERS = Array.isArray(winCfg.SPONSOR_BANNERS) && winCfg.SPONSOR_BA
 		id: "sponsor-tns-pro",
 		tag: "The Next Step Pro",
 		title: "Remove All Ads & Unlock Unlimited Accounts",
-		description: "One-time $4.99 lifetime unlock. Zero monthly subscriptions. 100% private.",
+		description: "One-time $6.99 lifetime unlock. Zero monthly subscriptions. 100% private.",
 		ctaText: "Unlock Pro",
 		ctaUrl: "INTERNAL_UPGRADE"
 	}
@@ -23140,7 +23140,7 @@ var UpgradeModal = ({ isOpen, onClose, settings, onUpdateSettings, onNotify }) =
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 									onClick: handleStartStripeCheckout,
 									className: "w-full py-3.5 px-4 bg-gradient-to-r from-sky-500 via-cyan-500 to-sky-600 hover:from-sky-400 hover:to-cyan-400 text-slate-950 font-black rounded-xl text-sm shadow-lg shadow-sky-900/40 flex items-center justify-center gap-2 transition cursor-pointer",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Upgrade to Lifetime Pro ($4.99 One-Time)" }), STRIPE_PAYMENT_LINK_URL && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "w-4 h-4" })]
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Upgrade to Lifetime Pro ($6.99 One-Time)" }), STRIPE_PAYMENT_LINK_URL && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "w-4 h-4" })]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 									className: "text-[11px] text-slate-400 text-center",
