@@ -12,7 +12,7 @@ window.TNS_MONETIZATION_CONFIG = {
   // When ready, paste your Stripe Payment Link inside the quotes below.
   // In Stripe Dashboard -> "After payment" -> Redirect to:
   //   https://YOUR-WEBSITE-URL/budget.html?tns_unlock=TNS_STRIPE_VERIFIED_2026
-  STRIPE_PAYMENT_LINK_URL: "",
+  STRIPE_PAYMENT_LINK_URL: https://dashboard.stripe.com/acct_1UZYNeJSHcGgHiIe/workbench/inspector/pmc_1UZYOAJSHcGgHiIewnpseSA7"",
 
   // 2. YOUR OFFICIAL WEBSITE / APP URL (For QR Codes & Share Links)
   // Optional: Paste your live GitHub Pages or domain URL here.
