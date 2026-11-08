@@ -17,7 +17,7 @@ window.TNS_MONETIZATION_CONFIG = {
   // 2. YOUR OFFICIAL WEBSITE / APP URL (For QR Codes & Share Links)
   // Optional: Paste your live GitHub Pages or domain URL here.
   // If left blank (""), the app automatically uses whatever website URL it is hosted on!
-  OFFICIAL_WEBSITE_URL: "",
+  OFFICIAL_WEBSITE_URL: "https://jdile3.github.io/The-Next-Step-/budget.html",
 
   // 3. GOOGLE ADSENSE (Optional Automatic Display Ads)
   // Set enabled: true and paste your AdSense Publisher ID & Slot ID when ready.
@@ -37,7 +37,7 @@ window.TNS_MONETIZATION_CONFIG = {
       title: "Save Up to 25¢/Gal on Gas & Groceries",
       description: "Earn automatic cash back at Shell, Circle K, Speedway, and local grocery stores.",
       ctaText: "Claim Free Bonus",
-      ctaUrl: "" // <-- PASTE YOUR REFERRAL OR SPONSOR LINK HERE
+      ctaUrl: "https://i.capitalone.com/J05BNs9FX" // <-- PASTE YOUR REFERRAL OR SPONSOR LINK HERE
     },
     {
       id: "sponsor-high-yield",
@@ -45,7 +45,7 @@ window.TNS_MONETIZATION_CONFIG = {
       title: "Stop Getting Paid 0.01% by Your Bank",
       description: "Get paid up to 2 days early with zero monthly maintenance or overdraft fees.",
       ctaText: "Learn More",
-      ctaUrl: "" // <-- PASTE YOUR REFERRAL OR SPONSOR LINK HERE
+      ctaUrl: "https://cash.app/refer/91VWVRV" // <-- PASTE YOUR REFERRAL OR SPONSOR LINK HERE
     },
     {
       id: "sponsor-tns-pro",
