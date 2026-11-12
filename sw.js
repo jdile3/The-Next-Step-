@@ -1,5 +1,5 @@
 // The Next Step - Service Worker for Native Android WebAPK & Offline Support
-const CACHE_NAME = 'the-next-step-v2';
+const CACHE_NAME = 'the-next-step-v4';
 const PRECACHE_ASSETS = [
   './',
   './budget.html',
@@ -38,8 +38,14 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
 
-  // Only handle same-origin or local assets
-  if (!event.request.url.startsWith(self.location.origin)) return;
+  // Only handle same-origin or local assets, and never cache Vite dev modules
+  if (
+    !event.request.url.startsWith(self.location.origin) ||
+    event.request.url.includes('/src/') ||
+    event.request.url.includes('/node_modules/')
+  ) {
+    return;
+  }
 
   event.respondWith(
     fetch(event.request)

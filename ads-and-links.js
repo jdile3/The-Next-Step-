@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * JOSH'S EASY EDIT CONFIG — STRIPE, WEBSITE & SPONSOR AD LINKS
+ * EASY EDIT CONFIG — STRIPE, WEBSITE & SPONSOR AD LINKS
  * ============================================================================
  * You can edit this small file directly on GitHub anytime!
  * Just paste your links inside the quotes ("") below and click "Commit changes".
