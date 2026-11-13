@@ -1,5 +1,5 @@
 // The Next Step - Service Worker for Native Android WebAPK & Offline Support
-const CACHE_NAME = 'the-next-step-v6';
+const CACHE_NAME = 'the-next-step-v7';
 const PRECACHE_ASSETS = [
   './',
   './budget.html',
