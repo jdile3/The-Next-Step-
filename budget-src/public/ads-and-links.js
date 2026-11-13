@@ -1,0 +1,76 @@
+/**
+ * ============================================================================
+ * EASY EDIT CONFIG — STRIPE, WEBSITE & SPONSOR AD LINKS
+ * ============================================================================
+ * You can edit this small file directly on GitHub anytime!
+ * Just paste your links inside the quotes ("") below and click "Commit changes".
+ * Your live Budgeting App (budget.html) will update automatically!
+ */
+
+window.TNS_MONETIZATION_CONFIG = {
+  // 1. YOUR STRIPE PAYMENT LINK (One-Time Pro Lifetime Checkout)
+  // Configure your post-payment redirect URL inside the Stripe Dashboard.
+  STRIPE_PAYMENT_LINK_URL: "https://buy.stripe.com/3cIfZiaWi0MYaBz8YNfjG00",
+
+  // 2. YOUR OFFICIAL WEBSITE / APP URL (For QR Codes & Share Links)
+  // Optional: Paste your live GitHub Pages or domain URL here.
+  // If left blank (""), the app automatically uses whatever website URL it is hosted on!
+  OFFICIAL_WEBSITE_URL: "https://jdile3.github.io/The-Next-Step-/",
+
+  // 3. GOOGLE ADSENSE (Optional Automatic Display Ads)
+  // Set enabled: true and paste your AdSense Publisher ID & Slot ID when ready.
+  ADSENSE_CONFIG: {
+    enabled: false,
+    publisherId: "ca-pub-0000000000000000",
+    bannerSlotId: "0000000000"
+  },
+
+  // 4. ROTATING BANNER ADS (Shown on Home, Accounts & More for Non-Pro Users)
+  // Paste your Cash App, Chime, Upside, or Sponsor links inside ctaUrl: ""
+  // If ctaUrl is left blank ("") or set to "INTERNAL_UPGRADE", tapping the ad opens your Pro Upgrade popup!
+  SPONSOR_BANNERS: [
+    {
+      id: "sponsor-cashback-gas",
+      tag: "Featured Partner",
+      title: "Save Up to 25¢/Gal on Gas & Groceries",
+      description: "Earn automatic cash back at Shell, Circle K, Speedway, and local grocery stores.",
+      ctaText: "Claim Free Bonus",
+      ctaUrl: "" // <-- PASTE YOUR REFERRAL OR SPONSOR LINK HERE
+    },
+    {
+      id: "sponsor-high-yield",
+      tag: "Smart Money Partner",
+      title: "Stop Getting Paid 0.01% by Your Bank",
+      description: "Get paid up to 2 days early with zero monthly maintenance or overdraft fees.",
+      ctaText: "Learn More",
+      ctaUrl: "" // <-- PASTE YOUR REFERRAL OR SPONSOR LINK HERE
+    },
+    {
+      id: "sponsor-tns-pro",
+      tag: "The Next Step Pro",
+      title: "Remove All Ads & Unlock Unlimited Accounts",
+      description: "One-time $6.99 lifetime unlock. Zero monthly subscriptions. 100% private.",
+      ctaText: "Unlock Pro",
+      ctaUrl: "INTERNAL_UPGRADE"
+    }
+  ],
+
+  // 5. POST-TRIAL (DAY 31+) 5-SECOND COMMERCIAL BREAK AD
+  VIDEO_AD_CONFIG: {
+    id: "video-ad-post-trial",
+    enabled: true,
+    sponsorName: "The Next Step · Sponsored Message",
+    headline: "Your 30-Day Free Trial Has Ended",
+    subheadline: "You are currently using the ad-supported Free Tier (2 accounts max). Watch this 5-second message to continue for free, or unlock Lifetime Pro to remove all video & banner ads forever.",
+    bullets: [
+      "Unlimited Checking, Savings, Cash App & Card Accounts",
+      "Full Recurring Bill Calendar, Goals & Reality Check Mirror",
+      "100% Ad-Free Forever — Zero Monthly Subscriptions"
+    ],
+    videoMp4Url: "", // <-- Optional: paste a direct .mp4 video commercial link here
+    ctaText: "Remove All Ads Forever",
+    ctaUrl: "INTERNAL_UPGRADE", // <-- Or paste a sponsor link here
+    skipDelaySeconds: 5,
+    cooldownMinutes: 4
+  }
+};

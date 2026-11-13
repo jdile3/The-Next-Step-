@@ -1,0 +1,32 @@
+{
+  "id": "./budget.html",
+  "name": "The Next Step - Budgeting",
+  "short_name": "Next Step",
+  "description": "A non-judgmental personal budgeting app to protect essentials first.",
+  "start_url": "./budget.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#061629",
+  "theme_color": "#061629",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

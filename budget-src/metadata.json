@@ -1,0 +1,10 @@
+{
+  "name": "The Next Step - Budgeting",
+  "description": "A Budgeting APP to help through your life's journey",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

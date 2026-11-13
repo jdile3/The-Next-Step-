@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta name="google-site-verification" content="9COAvB0br4xk-W2hkLEMZSoS9wX6hjZJG1-MqPKwyKo" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>THE NEXT STEP | Practical, Zero-Judgment Tools</title>
+  <meta name="description" content="Meet people where they are. Practical tools for cash flow, gym progression, and rebuilding life." />
+  <meta name="theme-color" content="#050b16" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png" />
+  <link rel="apple-touch-icon" href="./icon-192.png" />
+  <link rel="manifest" href="./manifest.json" />
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#050b16',
+            midnight: '#071224',
+            vaultCard: '#0a182e',
+            slateIce: '#e8eef4',
+            electric: '#0284c7',
+            skyGlow: '#22d3ee',
+            growth: '#10b981',
+            limeAccent: '#84cc16',
+            goldAccent: '#fbbf24',
+            alertRose: '#f43f5e'
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #050b16;
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(34, 211, 238, 0.14) 0%, transparent 55%),
+        radial-gradient(circle at 85% 25%, rgba(251, 191, 36, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 15% 65%, rgba(16, 185, 129, 0.09) 0%, transparent 50%);
+      background-attachment: fixed;
+    }
+    .vault-glow-cyan {
+      box-shadow: 0 20px 60px -15px rgba(34, 211, 238, 0.22), inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+    }
+    .vault-glow-gold {
+      box-shadow: 0 20px 60px -15px rgba(251, 191, 36, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+    }
+    .vault-glow-lime {
+      box-shadow: 0 20px 60px -15px rgba(132, 204, 22, 0.18), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="text-white font-sans antialiased selection:bg-skyGlow selection:text-obsidian overflow-x-hidden">
+
+  <!-- ================= TOP NAVIGATION BAR ================= -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#050b16]/85 border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-3">
+
+      <!-- Brand Crest with Official Master Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-2xl p-0.5 bg-gradient-to-tr from-limeAccent via-skyGlow to-growth shadow-[0_0_20px_rgba(34,211,238,0.35)] group-hover:scale-105 transition-transform shrink-0">
+          <img
+            src="./logo-master.jpg"
+            alt="The Next Step Official Master Crest"
+            class="w-full h-full object-cover rounded-[14px] bg-obsidian"
+          />
+        </div>
+        <div>
+          <span class="text-lg sm:text-xl font-black tracking-tight text-white block leading-tight">THE NEXT STEP</span>
+          <span class="text-[10px] sm:text-[11px] font-extrabold text-amber-300 tracking-[0.2em] uppercase block">
+            Tools For Survival &amp; Growth
+          </span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1.5 text-xs font-extrabold text-slate-300">
+        <a href="#apps" class="px-3.5 py-1.5 rounded-full hover:bg-white/10 hover:text-skyGlow transition-all">Apps</a>
+        <a href="#vision" class="px-3.5 py-1.5 rounded-full hover:bg-white/10 hover:text-skyGlow transition-all">The Vision</a>
+        <a href="#ladder" class="px-3.5 py-1.5 rounded-full hover:bg-white/10 hover:text-skyGlow transition-all">The Continuum</a>
+        <a href="#movement" class="px-3.5 py-1.5 rounded-full hover:bg-white/10 hover:text-skyGlow transition-all">The Movement</a>
+      </nav>
+
+      <!-- Action Button -->
+      <div class="flex items-center gap-2.5">
+        <a
+          href="./budget.html"
+          class="px-5 py-2.5 rounded-full bg-gradient-to-r from-skyGlow via-electric to-growth text-obsidian font-black text-xs sm:text-sm transition-all shadow-[0_0_25px_rgba(34,211,238,0.4)] hover:scale-105 active:scale-95"
+        >
+          Launch Money App ↗
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative pt-12 sm:pt-16 pb-20 px-4 sm:px-6 overflow-hidden">
+
+    <!-- Subtle Arch Vault Halo -->
+    <div class="absolute top-2 left-1/2 -translate-x-1/2 w-[680px] h-[520px] pointer-events-none opacity-20">
+      <svg viewBox="0 0 200 200" class="w-full h-full stroke-skyGlow" fill="none" stroke-width="1.2">
+        <path d="M 25,190 V 85 A 75,75 0 0,1 175,85 V 190" />
+        <path d="M 45,190 V 100 A 55,55 0 0,1 155,100 V 190" stroke-dasharray="3 3" />
+        <line x1="25" y1="190" x2="175" y2="190" />
+      </svg>
+    </div>
+
+    <div class="max-w-5xl mx-auto text-center relative z-10">
+
+      <!-- Top Status Pill -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#0a182e]/90 border border-skyGlow/35 text-xs font-extrabold text-skyGlow mb-7 backdrop-blur-md shadow-[0_0_20px_rgba(34,211,238,0.18)]">
+        <span class="w-2 h-2 rounded-full bg-growth animate-pulse"></span>
+        <span>Zero Judgment • Practical Clarity • Real Progress</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-[1.08] mb-6">
+        Meet people where they are.<br/>
+        <span class="bg-gradient-to-r from-amber-300 via-skyGlow to-growth bg-clip-text text-transparent">
+          Give them the next step.
+        </span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-base sm:text-xl text-slate-300 max-w-2xl mx-auto font-medium leading-relaxed mb-10">
+        Tools built for real life, practical habits, and honest clarity. No lectures, no monthly subscriptions, and 100% private data on your own device.
+      </p>
+
+      <!-- ================= THE 5 ENGRAVED ECOSYSTEM LOGOS DOCK ================= -->
+      <div class="max-w-3xl mx-auto p-4 sm:p-6 rounded-[2rem] bg-gradient-to-b from-[#0c1d36]/95 via-[#081528]/95 to-[#050d1a]/95 border border-skyGlow/30 backdrop-blur-xl vault-glow-cyan mb-10">
+        <div class="flex items-center justify-between gap-2 mb-4 px-1">
+          <span class="text-[11px] uppercase tracking-[0.2em] text-amber-300 font-black">
+            The 5-Step Ecosystem Continuum
+          </span>
+          <span class="text-[11px] font-bold text-slate-400">
+            Tap any crest to explore
+          </span>
+        </div>
+
+        <div class="grid grid-cols-5 gap-2 sm:gap-4">
+
+          <!-- Step 1: Unhoused -->
+          <a
+            href="#step-unhoused"
+            class="flex flex-col items-center justify-center p-2 sm:p-3 rounded-2xl bg-[#050c18]/90 border border-rose-500/40 hover:border-rose-400 hover:-translate-y-1 transition-all group shadow-lg"
+          >
+            <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl overflow-hidden border border-amber-400/50 shadow-[0_0_15px_rgba(244,63,94,0.25)] group-hover:scale-105 transition-transform bg-obsidian">
+              <img
+                src="./logo-unhoused.jpg"
+                alt="The Next Step: Unhoused Logo"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <span class="text-[10px] sm:text-xs font-extrabold text-white mt-2">Unhoused</span>
+            <span class="text-[9px] font-bold text-rose-400 uppercase tracking-wider hidden sm:block">Step 1</span>
+          </a>
+
+          <!-- Step 2: Recovery -->
+          <a
+            href="#step-recovery"
+            class="flex flex-col items-center justify-center p-2 sm:p-3 rounded-2xl bg-[#050c18]/90 border border-sky-400/40 hover:border-skyGlow hover:-translate-y-1 transition-all group shadow-lg"
+          >
+            <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl overflow-hidden border border-amber-400/50 shadow-[0_0_15px_rgba(56,189,248,0.25)] group-hover:scale-105 transition-transform bg-obsidian">
+              <img
+                src="./logo-recovery.jpg"
+                alt="The Next Step: Recovery Logo"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <span class="text-[10px] sm:text-xs font-extrabold text-white mt-2">Recovery</span>
+            <span class="text-[9px] font-bold text-skyGlow uppercase tracking-wider hidden sm:block">Step 2</span>
+          </a>
+
+          <!-- Step 3: Housing & Work -->
+          <a
+            href="#step-housing"
+            class="flex flex-col items-center justify-center p-2 sm:p-3 rounded-2xl bg-[#050c18]/90 border border-amber-400/40 hover:border-amber-300 hover:-translate-y-1 transition-all group shadow-lg"
+          >
+            <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl overflow-hidden border border-amber-400/60 shadow-[0_0_15px_rgba(251,191,36,0.25)] group-hover:scale-105 transition-transform bg-obsidian">
+              <img
+                src="./logo-housing.jpg"
+                alt="The Next Step: Housing Logo"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <span class="text-[10px] sm:text-xs font-extrabold text-white mt-2">Housing</span>
+            <span class="text-[9px] font-bold text-amber-300 uppercase tracking-wider hidden sm:block">Step 3</span>
+          </a>
+
+          <!-- Step 4: Money (LIVE FLAGSHIP) -->
+          <a
+            href="./budget.html"
+            class="relative flex flex-col items-center justify-center p-2 sm:p-3 rounded-2xl bg-gradient-to-b from-cyan-950/90 to-[#050c18] border-2 border-skyGlow shadow-[0_0_25px_rgba(34,211,238,0.4)] hover:-translate-y-1 transition-all group"
+          >
+            <span class="absolute -top-2.5 px-2 py-0.5 rounded-full bg-growth text-obsidian text-[8px] sm:text-[9px] font-black uppercase tracking-wider shadow">
+              Live
+            </span>
+            <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl overflow-hidden border border-skyGlow shadow-[0_0_18px_rgba(34,211,238,0.45)] group-hover:scale-105 transition-transform bg-obsidian">
+              <img
+                src="./logo-money.png"
+                alt="The Next Step: Money Logo"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <span class="text-[10px] sm:text-xs font-black text-skyGlow mt-2">Money</span>
+            <span class="text-[9px] font-bold text-emerald-300 uppercase tracking-wider hidden sm:block">Launch ↗</span>
+          </a>
+
+          <!-- Step 5: Iron / Gym -->
+          <a
+            href="#app-gym"
+            class="flex flex-col items-center justify-center p-2 sm:p-3 rounded-2xl bg-[#050c18]/90 border border-limeAccent/45 hover:border-limeAccent hover:-translate-y-1 transition-all group shadow-lg"
+          >
+            <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl overflow-hidden border border-amber-400/50 shadow-[0_0_15px_rgba(132,204,22,0.28)] group-hover:scale-105 transition-transform bg-obsidian">
+              <img
+                src="./logo-iron.jpg"
+                alt="The Next Step: Iron Gym Logo"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <span class="text-[10px] sm:text-xs font-extrabold text-limeAccent mt-2">Iron</span>
+            <span class="text-[9px] font-bold text-limeAccent/80 uppercase tracking-wider hidden sm:block">Step 5</span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Hero Call To Action Pill Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="./budget.html"
+          class="px-8 py-4 rounded-full bg-gradient-to-r from-skyGlow via-electric to-growth text-obsidian font-black text-base transition-all shadow-[0_0_30px_rgba(34,211,238,0.4)] hover:scale-105 active:scale-95"
+        >
+          Launch Money App ↗
+        </a>
+        <a
+          href="#vision"
+          class="px-8 py-4 rounded-full bg-white/8 hover:bg-white/15 font-extrabold text-base text-slate-100 border border-white/15 backdrop-blur-md transition-all"
+        >
+          Read The Vision
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= THE VISION (REPLACES MANIFESTO) ================= -->
+  <section id="vision" class="py-20 bg-[#040a14]/90 border-y border-white/10 px-4 sm:px-6 relative">
+    <div class="max-w-4xl mx-auto">
+
+      <div class="text-center mb-10">
+        <span class="text-xs font-black uppercase tracking-[0.22em] text-amber-300">The Foundation</span>
+        <h2 class="text-3xl sm:text-5xl font-black text-white mt-2">The Next Step Vision</h2>
+      </div>
+
+      <div class="bg-gradient-to-b from-[#0c1d36]/95 via-[#081528]/95 to-[#050d1a]/95 p-8 sm:p-12 rounded-[2.25rem] border border-amber-400/30 vault-glow-gold relative overflow-hidden">
+
+        <div class="absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-b from-amber-300 via-skyGlow to-growth"></div>
+
+        <blockquote class="text-2xl sm:text-3xl font-black text-white tracking-tight leading-snug mb-6">
+          “People who are in a hard place are not horrible people.<br/>
+          <span class="bg-gradient-to-r from-skyGlow to-growth bg-clip-text text-transparent">
+            They need compassion, understanding, and a clear path.”
+          </span>
+        </blockquote>
+
+        <div class="space-y-4 text-base sm:text-lg text-slate-300 font-medium leading-relaxed">
+          <p>
+            It started as a single personal workbook built out of necessity to stop financial bleeding and get honest clarity on cash flow. It grew into a bigger realization: people stumble, but that doesn't mean they're broken.
+          </p>
+          <p>
+            We don't preach. We don't judge. We build software that keeps you grounded today, helps you secure your survival essentials first, and walks with you step by step as you build discipline, physical strength, and financial independence.
+          </p>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between flex-wrap gap-4">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-2xl overflow-hidden border border-limeAccent/60 bg-obsidian p-0.5 shadow-md">
+              <img src="./logo-master.jpg" alt="The Next Step Crest" class="w-full h-full object-cover rounded-[14px]" />
+            </div>
+            <div>
+              <div class="text-base font-black text-white">The Next Step Ecosystem</div>
+              <div class="text-xs font-bold text-amber-300">Compassion • Clarity • Independence</div>
+            </div>
+          </div>
+          <span class="text-xs font-extrabold px-4 py-1.5 rounded-full bg-skyGlow/15 text-skyGlow border border-skyGlow/35">
+            From an App to a Movement
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= THE CORE APPS (MONEY & IRON FEATURED IN OBSIDIAN VAULT STYLE) ================= -->
+  <section id="apps" class="py-24 px-4 sm:px-6 relative">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-black uppercase tracking-[0.22em] text-skyGlow">The Software</span>
+        <h2 class="text-3xl sm:text-5xl font-black text-white mt-2">Tools Built For Daily Execution</h2>
+        <p class="text-slate-400 mt-3 text-base sm:text-lg">
+          Direct, offline-first tools designed with our signature dark-glass cockpit to build habits, protect cash flow, and forge physical strength.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+
+        <!-- APP 1: THE NEXT STEP - MONEY (LUXURY OBSIDIAN & CYAN/GOLD VAULT CARD) -->
+        <div
+          id="app-money"
+          class="bg-gradient-to-b from-[#0d2240]/95 via-[#081528]/95 to-[#050c18]/95 rounded-[2.25rem] p-8 sm:p-10 text-white border-2 border-skyGlow/70 flex flex-col justify-between vault-glow-cyan relative overflow-hidden"
+        >
+          <div class="absolute -top-24 -right-24 w-64 h-64 bg-skyGlow/15 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="relative z-10">
+            <div class="flex items-center justify-between gap-3 mb-7">
+              <div class="flex items-center gap-4">
+                <div class="w-20 h-20 rounded-2xl overflow-hidden border-2 border-amber-400/70 shadow-[0_0_25px_rgba(34,211,238,0.4)] bg-obsidian shrink-0">
+                  <img
+                    src="./logo-money.png"
+                    alt="The Next Step: Money Logo"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <span class="inline-flex items-center gap-1.5 bg-growth/20 border border-growth/50 text-emerald-300 text-[11px] font-black uppercase px-3 py-1 rounded-full mb-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-growth animate-pulse"></span>
+                    Flagship • Live Now
+                  </span>
+                  <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                    The Next Step: Money
+                  </h3>
+                  <p class="text-xs sm:text-sm font-bold text-skyGlow">
+                    Walk-Away Cash Flow &amp; Bill Defense Cockpit
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-slate-300 text-base leading-relaxed mb-6">
+              Calculates your true <strong class="text-skyGlow font-extrabold">Free to Spend</strong> radial dial and daily safe burn pace for each paycheck. Locks in survival bills first, tracks habit burn rates in the Reality Check Mirror with zero guilt, and maps CSV statements 100% offline.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                <span class="text-skyGlow font-black text-xs uppercase tracking-wider block">Radial Walk-Away Gauge</span>
+                <span class="text-xs text-slate-300 mt-1 block">Know your exact daily safe spend before touching bills.</span>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                <span class="text-amber-300 font-black text-xs uppercase tracking-wider block">Orb Bill Calendar</span>
+                <span class="text-xs text-slate-300 mt-1 block">Sculpted circular day orbs &amp; one-tap paid bill defense.</span>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                <span class="text-purple-300 font-black text-xs uppercase tracking-wider block">Reality Check Mirror</span>
+                <span class="text-xs text-slate-300 mt-1 block">Honest habit burn projections with zero lectures.</span>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                <span class="text-emerald-300 font-black text-xs uppercase tracking-wider block">100% Device Private</span>
+                <span class="text-xs text-slate-300 mt-1 block">Zero bank passwords required. Zero monthly fees.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative z-10 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <span class="text-[11px] uppercase font-extrabold text-slate-400 tracking-wider block">
+                30-Day Full Free Trial
+              </span>
+              <span class="text-base sm:text-lg font-black text-amber-300">
+                $6.99 One-Time Lifetime Pro • Or Free w/ Ads
+              </span>
+            </div>
+            <a
+              href="./budget.html"
+              class="px-6 py-3.5 rounded-full bg-gradient-to-r from-skyGlow to-growth text-obsidian font-black text-sm transition-all shadow-[0_0_25px_rgba(34,211,238,0.4)] hover:scale-105 active:scale-95 inline-flex items-center gap-1.5"
+            >
+              <span>Launch Live App</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- APP 2: THE NEXT STEP - IRON / GYM -->
+        <div
+          id="app-gym"
+          class="bg-gradient-to-b from-[#0c1f24]/95 via-[#081524]/95 to-[#050c18]/95 rounded-[2.25rem] p-8 sm:p-10 text-white border border-limeAccent/45 flex flex-col justify-between vault-glow-lime relative overflow-hidden"
+        >
+          <div class="absolute -top-24 -right-24 w-64 h-64 bg-limeAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="relative z-10">
+            <div class="flex items-center justify-between gap-3 mb-7">
+              <div class="flex items-center gap-4">
+                <div class="w-20 h-20 rounded-2xl overflow-hidden border-2 border-limeAccent/70 shadow-[0_0_25px_rgba(132,204,22,0.3)] bg-obsidian shrink-0">
+                  <img
+                    src="./logo-iron.jpg"
+                    alt="The Next Step: Iron Gym Logo"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <span class="inline-flex items-center gap-1.5 bg-limeAccent/20 border border-limeAccent/50 text-limeAccent text-[11px] font-black uppercase px-3 py-1 rounded-full mb-1.5">
+                    Step 5 • Next In Line
+                  </span>
+                  <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                    The Next Step: Iron
+                  </h3>
+                  <p class="text-xs sm:text-sm font-bold text-limeAccent">
+                    Raw Progressive Overload &amp; Gym Cockpit
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-slate-300 text-base leading-relaxed mb-6">
+              No bloated influencer video feeds or 40-step workout wizards. Built for basement, garage, and local gyms to track progressive overload, rep targets, and plate math completely offline.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                <span class="text-limeAccent font-black text-xs uppercase tracking-wider block">1-Tap Set Logging</span>
+                <span class="text-xs text-slate-300 mt-1 block">Log weight, reps, and RPE in under 3 seconds between sets.</span>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                <span class="text-amber-300 font-black text-xs uppercase tracking-wider block">Overload Target Engine</span>
+                <span class="text-xs text-slate-300 mt-1 block">Shows the exact rep or plate to beat your last session.</span>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                <span class="text-skyGlow font-black text-xs uppercase tracking-wider block">Dead-Zone Offline</span>
+                <span class="text-xs text-slate-300 mt-1 block">Works in concrete basement gyms with zero cell bars.</span>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                <span class="text-emerald-300 font-black text-xs uppercase tracking-wider block">Zero Subscriptions</span>
+                <span class="text-xs text-slate-300 mt-1 block">Your strength history is never held hostage behind a paywall.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative z-10 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <span class="text-[11px] uppercase font-extrabold text-slate-400 tracking-wider block">
+                Development Status
+              </span>
+              <span class="text-base sm:text-lg font-black text-limeAccent">
+                Architecture &amp; Crest Ready
+              </span>
+            </div>
+            <span class="px-5 py-3 rounded-full bg-white/8 text-xs font-extrabold text-limeAccent border border-limeAccent/35">
+              Coming Up Next
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= THE COMPLETE 5-STEP CONTINUUM ================= -->
+  <section id="ladder" class="py-20 bg-[#040a14]/90 border-t border-white/10 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-black uppercase tracking-[0.22em] text-amber-300">The Continuum</span>
+        <h2 class="text-3xl sm:text-5xl font-black text-white mt-2">The Complete 5-Step Path</h2>
+        <p class="text-slate-400 mt-3 text-base sm:text-lg">
+          Every emblem inside the Arch &amp; Golden Stairs represents a real stage of human survival, stability, and self-mastery.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+
+        <!-- Step 1: Unhoused -->
+        <div
+          id="step-unhoused"
+          class="p-6 sm:p-7 rounded-[2rem] bg-gradient-to-b from-[#0c1d36]/90 to-[#061020]/90 border border-rose-500/35 hover:border-rose-400/70 transition-all shadow-xl flex flex-col justify-between"
+        >
+          <div>
+            <div class="flex items-center gap-4 mb-5">
+              <div class="w-16 h-16 rounded-2xl overflow-hidden border border-amber-400/60 shadow-[0_0_20px_rgba(244,63,94,0.25)] bg-obsidian shrink-0">
+                <img
+                  src="./logo-unhoused.jpg"
+                  alt="Step 1: Unhoused Logo"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <span class="text-[10px] font-black uppercase tracking-widest text-rose-400 block">
+                  Step 1 • Street Survival
+                </span>
+                <h4 class="text-xl font-black text-white">The Next Step: Unhoused</h4>
+              </div>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed mb-4">
+              Resource finder for the unhoused with street-level building photos, harm reduction guides, water &amp; shelter maps, and broken-screen accessibility. Includes the quiet <strong>"A Better Way"</strong> escape tab.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-extrabold text-rose-400">Survival &amp; Resource Finder</span>
+            <span class="text-[11px] font-bold text-slate-400 bg-white/5 px-3 py-1 rounded-full">In Continuum</span>
+          </div>
+        </div>
+
+        <!-- Step 2: Recovery -->
+        <div
+          id="step-recovery"
+          class="p-6 sm:p-7 rounded-[2rem] bg-gradient-to-b from-[#0c1d36]/90 to-[#061020]/90 border border-skyGlow/35 hover:border-skyGlow/70 transition-all shadow-xl flex flex-col justify-between"
+        >
+          <div>
+            <div class="flex items-center gap-4 mb-5">
+              <div class="w-16 h-16 rounded-2xl overflow-hidden border border-amber-400/60 shadow-[0_0_20px_rgba(34,211,238,0.25)] bg-obsidian shrink-0">
+                <img
+                  src="./logo-recovery.jpg"
+                  alt="Step 2: Recovery Logo"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <span class="text-[10px] font-black uppercase tracking-widest text-skyGlow block">
+                  Step 2 • A Better Way
+                </span>
+                <h4 class="text-xl font-black text-white">The Next Step: Recovery</h4>
+              </div>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed mb-4">
+              The immediate bridge when someone chooses "A Better Way." Direct connections to local detox beds, sober living, peer support, and crisis stabilization without endless red tape.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-extrabold text-skyGlow">Support, Sobriety &amp; Detox</span>
+            <span class="text-[11px] font-bold text-slate-400 bg-white/5 px-3 py-1 rounded-full">In Continuum</span>
+          </div>
+        </div>
+
+        <!-- Step 3: Housing & Work -->
+        <div
+          id="step-housing"
+          class="p-6 sm:p-7 rounded-[2rem] bg-gradient-to-b from-[#0c1d36]/90 to-[#061020]/90 border border-amber-400/35 hover:border-amber-300/70 transition-all shadow-xl flex flex-col justify-between"
+        >
+          <div>
+            <div class="flex items-center gap-4 mb-5">
+              <div class="w-16 h-16 rounded-2xl overflow-hidden border border-amber-400/60 shadow-[0_0_20px_rgba(251,191,36,0.25)] bg-obsidian shrink-0">
+                <img
+                  src="./logo-housing.jpg"
+                  alt="Step 3: Housing & Work Logo"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <span class="text-[10px] font-black uppercase tracking-widest text-amber-300 block">
+                  Step 3 • Keys &amp; Dignity
+                </span>
+                <h4 class="text-xl font-black text-white">The Next Step: Housing</h4>
+              </div>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed mb-4">
+              Second-chance rental listings for individuals rebuilding after past evictions or felony records, apartment furnishing connections, and an honest pocket workforce hub.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-extrabold text-amber-300">Second-Chance Housing &amp; Jobs</span>
+            <span class="text-[11px] font-bold text-slate-400 bg-white/5 px-3 py-1 rounded-full">In Continuum</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Row of Continuum: Step 4 (Money) & Step 5 (Iron) Summary Pills -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <a
+          href="./budget.html"
+          class="p-5 sm:p-6 rounded-[2rem] bg-gradient-to-r from-[#0c213d]/90 to-[#071426]/90 border border-skyGlow/50 hover:border-skyGlow flex items-center justify-between gap-4 transition-all group shadow-lg"
+        >
+          <div class="flex items-center gap-4">
+            <img src="./logo-money.png" alt="Step 4: Money" class="w-14 h-14 rounded-2xl object-cover border border-skyGlow shrink-0" />
+            <div>
+              <span class="text-[10px] font-black uppercase tracking-widest text-emerald-300 block">Step 4 • Financial Control (Live Now)</span>
+              <h4 class="text-lg font-black text-white group-hover:text-skyGlow transition-colors">The Next Step: Money</h4>
+              <p class="text-xs text-slate-300 mt-0.5">Protect survival bills first and know your exact Walk-Away spend limit.</p>
+            </div>
+          </div>
+          <span class="px-4 py-2 rounded-full bg-skyGlow text-obsidian font-black text-xs shrink-0">Open App ↗</span>
+        </a>
+
+        <a
+          href="#app-gym"
+          class="p-5 sm:p-6 rounded-[2rem] bg-gradient-to-r from-[#0d2224]/90 to-[#071426]/90 border border-limeAccent/40 hover:border-limeAccent flex items-center justify-between gap-4 transition-all group shadow-lg"
+        >
+          <div class="flex items-center gap-4">
+            <img src="./logo-iron.jpg" alt="Step 5: Iron" class="w-14 h-14 rounded-2xl object-cover border border-limeAccent shrink-0" />
+            <div>
+              <span class="text-[10px] font-black uppercase tracking-widest text-limeAccent block">Step 5 • Physical Discipline</span>
+              <h4 class="text-lg font-black text-white group-hover:text-limeAccent transition-colors">The Next Step: Iron</h4>
+              <p class="text-xs text-slate-300 mt-0.5">Offline progressive overload &amp; strength rebuilding without distractions.</p>
+            </div>
+          </div>
+          <span class="px-4 py-2 rounded-full bg-white/10 text-limeAccent font-black text-xs shrink-0">Preview ↑</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= THE GREATER MOVEMENT ================= -->
+  <section id="movement" class="py-24 px-4 sm:px-6 border-t border-white/10">
+    <div class="max-w-5xl mx-auto text-center">
+
+      <span class="text-xs font-black uppercase tracking-[0.22em] text-skyGlow">The Vision for the Future</span>
+      <h2 class="text-3xl sm:text-5xl font-black text-white mt-2 mb-6">More Than Software. A Movement.</h2>
+
+      <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-14">
+        Software gives clarity in your pocket, but real human change happens on the ground:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+
+        <!-- Pillar 1: Rides That Help -->
+        <div class="p-7 rounded-[2rem] bg-gradient-to-b from-[#0c1d36]/90 to-[#061020]/90 border border-white/10 hover:border-skyGlow/40 transition-all shadow-xl">
+          <div class="w-12 h-12 rounded-full bg-skyGlow/15 border border-skyGlow/40 flex items-center justify-center text-skyGlow mb-4">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
+              <circle cx="7" cy="17" r="2" />
+              <path d="M9 17h6" />
+              <circle cx="17" cy="17" r="2" />
+            </svg>
+          </div>
+          <h4 class="text-lg font-black text-white mb-2">Rides That Help</h4>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Transportation support to help people get to first-week work shifts, court or medical appointments, recovery meetings, and essential errands.
+          </p>
+        </div>
+
+        <!-- Pillar 2: Dignity & Advocacy -->
+        <div class="p-7 rounded-[2rem] bg-gradient-to-b from-[#0c1d36]/90 to-[#061020]/90 border border-white/10 hover:border-amber-400/40 transition-all shadow-xl">
+          <div class="w-12 h-12 rounded-full bg-amber-400/15 border border-amber-400/40 flex items-center justify-center text-amber-300 mb-4">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+              <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+              <path d="M7 21h10" />
+              <path d="M12 3v18" />
+              <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" />
+            </svg>
+          </div>
+          <h4 class="text-lg font-black text-white mb-2">Dignity &amp; Advocacy</h4>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Encouraging practical support, skill-building, and rehabilitation instead of the endless cycling and incarceration of people who are struggling.
+          </p>
+        </div>
+
+        <!-- Pillar 3: Community Hubs -->
+        <div class="p-7 rounded-[2rem] bg-gradient-to-b from-[#0c1d36]/90 to-[#061020]/90 border border-white/10 hover:border-growth/40 transition-all shadow-xl">
+          <div class="w-12 h-12 rounded-full bg-growth/15 border border-growth/40 flex items-center justify-center text-emerald-300 mb-4">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <h4 class="text-lg font-black text-white mb-2">Community Hubs</h4>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Walk-in spaces focused on human compassion, real-world casework, and practical rebuilding with zero judgment.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="py-10 px-4 sm:px-6 bg-[#030710] border-t border-white/10 text-slate-400 text-xs">
+    <div class="max-w-6xl mx-auto flex flex-col gap-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <img src="./logo-master.jpg" alt="The Next Step" class="w-8 h-8 rounded-xl object-cover border border-limeAccent/50" />
+          <span><strong class="font-black text-white">THE NEXT STEP</strong> — Practical Tools for Life's Journey.</span>
+        </div>
+        <div class="font-bold text-slate-300">
+          Compassion • Clarity • Independence
+        </div>
+        <div>
+          &copy; <span id="year"></span> The Next Step Ecosystem.
+        </div>
+      </div>
+
+      <!-- Subtle Bottom Link with Trigger Warning Gate -->
+      <div class="pt-4 border-t border-white/5 flex justify-center">
+        <button
+          type="button"
+          onclick="document.getElementById('tw-modal').classList.remove('hidden')"
+          class="px-4 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-[11px] font-semibold text-slate-400 hover:text-slate-200 transition cursor-pointer"
+        >
+          Click here for info on harm reduction (Content Warning)
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TRIGGER WARNING MODAL -->
+  <div id="tw-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm p-4">
+    <div class="bg-[#081528] border border-rose-500/40 rounded-3xl max-w-md w-full p-6 text-white shadow-2xl space-y-4">
+      <div class="inline-block px-3 py-1 rounded-full bg-rose-500/20 border border-rose-400/40 text-[11px] font-black uppercase tracking-wider text-rose-300">
+        Content &amp; Trigger Warning
+      </div>
+      <h3 class="text-xl font-black text-white">Educational Harm Reduction Resource</h3>
+      <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+        The following page contains frank educational visuals, diagrams, and emergency safety information intended strictly to reduce harm and save lives. It does not glorify or encourage substance use.
+      </p>
+      <div class="flex items-center gap-3 pt-2">
+        <a
+          href="./harm-reduction.html"
+          class="flex-1 py-2.5 px-4 rounded-xl bg-rose-500 hover:bg-rose-400 text-obsidian font-black text-xs text-center transition"
+        >
+          I Understand — Continue
+        </a>
+        <button
+          type="button"
+          onclick="document.getElementById('tw-modal').classList.add('hidden')"
+          class="py-2.5 px-4 rounded-xl bg-white/10 hover:bg-white/15 text-slate-200 font-bold text-xs cursor-pointer transition"
+        >
+          Go Back
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./sw.js').catch(function () {});
+      });
+    }
+  </script>
+</body>
+</html>

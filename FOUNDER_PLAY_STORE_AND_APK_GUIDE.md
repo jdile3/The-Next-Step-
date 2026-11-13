@@ -34,11 +34,11 @@ npx @bubblewrap/cli build
 ---
 
 ## 3. VIP Passcode Reference
-- **Your Single Friends & Family VIP Passcode**: `VIPforMYhomie`
+- **Your Single Friends & Family VIP Passcode**: *(Keep this privately in your personal notes — never commit the plaintext passcode to a public GitHub repo.)*
 - **How It Works in Code**:
-  - The app never stores the plain-text word `VIPforMYhomie` in the source code.
-  - Instead, `src/utils/paywall.ts` hashes whatever the user types using `SHA-256` and compares it to the hash `fad02a6fcc62a4a3fa0ca301a6b879d935790af0feeebecb91a499d877135d4e`.
-  - Entering `VIPforMYhomie` in **More → Settings → Unlock Pro / Enter VIP Passcode** permanently unlocks Lifetime Pro (`isPro: true`) with unlimited accounts and zero ads.
+  - The app never stores the plain-text passcode in the source code.
+  - Instead, `paywall.ts` hashes whatever the user types using `SHA-256` and compares it to the hash `fad02a6fcc62a4a3fa0ca301a6b879d935790af0feeebecb91a499d877135d4e`.
+  - Entering your VIP passcode in **More → Settings → Unlock Pro / Enter VIP Passcode** permanently unlocks Lifetime Pro (`isPro: true`) with unlimited accounts and zero ads.
 
 ---
 

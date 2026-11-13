@@ -277,10 +277,20 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  if (!window.location.hostname.includes("github.io")) {
-    document.querySelectorAll('a[href="./index.html"]').forEach(function (el) {
-      el.setAttribute("href", "./website-preview");
-    });
+  function escHtml(val) {
+    return String(val == null ? "" : val)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function safeMediaUrl(raw) {
+    var s = String(raw || "").trim();
+    if (!s) return "";
+    if (s.startsWith("./") || s.startsWith("/") || /^https:\/\//i.test(s)) return s;
+    return "";
   }
 
   var gateModal = document.getElementById("hr-gate-modal");
@@ -323,7 +333,7 @@
     var topics = window.TNS_HARM_REDUCTION_TOPICS || [];
     container.innerHTML = '<div class="grid grid-cols-1 md:grid-cols-2 gap-5">' + topics.map(function (t) {
       var st = colorStyles[t.badgeColor] || colorStyles.sky;
-      return '<button type="button" data-topic-id="' + t.id + '" class="text-left p-6 rounded-[1.75rem] bg-[#071224]/90 border ' + st.border + ' transition-all flex flex-col justify-between gap-5 shadow-xl cursor-pointer group hover:-translate-y-0.5"><div><span class="inline-block text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full border ' + st.badge + ' mb-3">' + t.badge + '</span><h2 class="text-xl font-black text-white group-hover:text-skyGlow">' + t.title + '</h2><p class="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed">' + t.subtitle + '</p></div><div class="pt-4 border-t border-white/10 flex items-center justify-between"><span class="text-xs font-bold text-slate-400">Diagrams + Gated Video</span><span class="px-4 py-2 rounded-full font-black text-xs ' + st.btn + '">Open Module →</span></div></button>';
+      return '<button type="button" data-topic-id="' + escHtml(t.id) + '" class="text-left p-6 rounded-[1.75rem] bg-[#071224]/90 border ' + st.border + ' transition-all flex flex-col justify-between gap-5 shadow-xl cursor-pointer group hover:-translate-y-0.5"><div><span class="inline-block text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full border ' + st.badge + ' mb-3">' + escHtml(t.badge) + '</span><h2 class="text-xl font-black text-white group-hover:text-skyGlow">' + escHtml(t.title) + '</h2><p class="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed">' + escHtml(t.subtitle) + '</p></div><div class="pt-4 border-t border-white/10 flex items-center justify-between"><span class="text-xs font-bold text-slate-400">Diagrams + Gated Video</span><span class="px-4 py-2 rounded-full font-black text-xs ' + st.btn + '">Open Module →</span></div></button>';
     }).join("") + '</div>';
     container.querySelectorAll("[data-topic-id]").forEach(function (btn) {
       btn.addEventListener("click", function () { window.location.hash = btn.getAttribute("data-topic-id") || ""; });
@@ -334,34 +344,36 @@
     var container = document.getElementById("harm-reduction-content");
     if (!container) return;
     var visualsHtml = (topic.visuals || []).map(function (v) {
-      var media = v.imageUrl
-        ? '<img src="' + v.imageUrl + '" alt="' + v.title + '" class="w-full max-h-64 object-contain rounded-2xl bg-black/50 border border-white/10" />'
+      var cleanImg = safeMediaUrl(v.imageUrl);
+      var media = cleanImg
+        ? '<img src="' + escHtml(cleanImg) + '" alt="' + escHtml(v.title) + '" class="w-full max-h-64 object-contain rounded-2xl bg-black/50 border border-white/10" />'
         : getDiagramSvg(v.diagramType);
-      return '<div class="p-5 rounded-3xl bg-[#071224]/95 border border-skyGlow/30 space-y-3"><div class="text-sm font-black text-skyGlow">' + v.title + '</div>' + media + '<p class="text-xs text-slate-300 leading-relaxed">' + v.caption + '</p></div>';
+      return '<div class="p-5 rounded-3xl bg-[#071224]/95 border border-skyGlow/30 space-y-3"><div class="text-sm font-black text-skyGlow">' + escHtml(v.title) + '</div>' + media + '<p class="text-xs text-slate-300 leading-relaxed">' + escHtml(v.caption) + '</p></div>';
     }).join("");
 
     var vEmbed = topic.videoEmbed;
-    var isIframe = vEmbed && vEmbed.videoUrl && /youtube\.com|youtu\.be|vimeo\.com|embed/i.test(vEmbed.videoUrl);
-    var videoPlayerHtml = vEmbed && vEmbed.videoUrl
+    var cleanVideoUrl = vEmbed ? safeMediaUrl(vEmbed.videoUrl) : "";
+    var isIframe = cleanVideoUrl && /youtube\.com|youtu\.be|vimeo\.com|embed/i.test(cleanVideoUrl);
+    var videoPlayerHtml = cleanVideoUrl
       ? (isIframe
-          ? '<iframe src="' + vEmbed.videoUrl + '" class="w-full aspect-video rounded-2xl border border-white/15 bg-black" allowfullscreen></iframe>'
-          : '<video src="' + vEmbed.videoUrl + '" controls class="w-full rounded-2xl border border-white/15 bg-black max-h-80"></video>')
+          ? '<iframe src="' + escHtml(cleanVideoUrl) + '" class="w-full aspect-video rounded-2xl border border-white/15 bg-black" allowfullscreen></iframe>'
+          : '<video src="' + escHtml(cleanVideoUrl) + '" controls class="w-full rounded-2xl border border-white/15 bg-black max-h-80"></video>')
       : '<div class="p-6 rounded-2xl bg-black/60 border border-dashed border-rose-400/40 text-center space-y-1"><p class="text-xs font-black text-rose-300">Instructional Video Player Ready</p><p class="text-[11px] text-slate-400">Paste a YouTube embed URL or .mp4 path into videoEmbed.videoUrl in public/harm-reduction-data.js</p></div>';
     var videoHtml = vEmbed ? (
       '<div class="p-5 rounded-3xl bg-rose-950/30 border border-rose-500/40 space-y-3">' +
-        '<div class="flex items-center justify-between flex-wrap gap-2"><span class="text-sm font-black text-white">' + vEmbed.title + '</span><span class="text-[10px] font-black uppercase px-2.5 py-1 rounded-full bg-rose-500/20 text-rose-300 border border-rose-400/30">Gated Instructional Media</span></div>' +
-        '<p class="text-xs text-rose-200">' + vEmbed.warningText + '</p>' +
+        '<div class="flex items-center justify-between flex-wrap gap-2"><span class="text-sm font-black text-white">' + escHtml(vEmbed.title) + '</span><span class="text-[10px] font-black uppercase px-2.5 py-1 rounded-full bg-rose-500/20 text-rose-300 border border-rose-400/30">Gated Instructional Media</span></div>' +
+        '<p class="text-xs text-rose-200">' + escHtml(vEmbed.warningText) + '</p>' +
         '<button type="button" id="reveal-video-btn" class="px-4 py-2 rounded-xl bg-rose-500 hover:bg-rose-400 text-obsidian font-black text-xs cursor-pointer transition">I Understand Trigger Warning — Reveal Video Player</button>' +
         '<div id="gated-video-slot" class="hidden pt-2">' + videoPlayerHtml + '</div>' +
       '</div>'
     ) : "";
 
     var sectionsHtml = (topic.sections || []).map(function (sec) {
-      var items = sec.bullets.map(function (b) { return '<li class="flex items-start gap-3 text-sm text-slate-200 leading-relaxed"><span class="w-2 h-2 rounded-full bg-skyGlow shrink-0 mt-2"></span><span>' + b + '</span></li>'; }).join("");
-      return '<div class="p-6 rounded-3xl bg-[#071224]/95 border border-white/10 space-y-3"><h3 class="text-lg font-black text-amber-300">' + sec.heading + '</h3><ul class="space-y-2.5">' + items + '</ul></div>';
+      var items = (sec.bullets || []).map(function (b) { return '<li class="flex items-start gap-3 text-sm text-slate-200 leading-relaxed"><span class="w-2 h-2 rounded-full bg-skyGlow shrink-0 mt-2"></span><span>' + escHtml(b) + '</span></li>'; }).join("");
+      return '<div class="p-6 rounded-3xl bg-[#071224]/95 border border-white/10 space-y-3"><h3 class="text-lg font-black text-amber-300">' + escHtml(sec.heading) + '</h3><ul class="space-y-2.5">' + items + '</ul></div>';
     }).join("");
 
-    container.innerHTML = '<div class="space-y-6"><div class="flex items-center justify-between flex-wrap gap-3 pb-4 border-b border-white/10"><button type="button" id="back-to-hub-top" class="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-black text-xs cursor-pointer">← Back to All Harm Reduction Topics</button><span class="text-xs font-extrabold text-rose-300 bg-rose-500/15 border border-rose-400/30 px-3.5 py-1.5 rounded-full">Strictly Educational • Not to Glorify</span></div><div class="p-4 rounded-2xl bg-rose-950/60 border border-rose-500/40 text-xs text-rose-200 font-semibold">' + topic.summaryWarning + '</div><div class="grid grid-cols-1 md:grid-cols-2 gap-4">' + visualsHtml + '</div>' + videoHtml + '<div class="space-y-4">' + sectionsHtml + '</div></div>';
+    container.innerHTML = '<div class="space-y-6"><div class="flex items-center justify-between flex-wrap gap-3 pb-4 border-b border-white/10"><button type="button" id="back-to-hub-top" class="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-black text-xs cursor-pointer">← Back to All Harm Reduction Topics</button><span class="text-xs font-extrabold text-rose-300 bg-rose-500/15 border border-rose-400/30 px-3.5 py-1.5 rounded-full">Strictly Educational • Not to Glorify</span></div><div class="p-4 rounded-2xl bg-rose-950/60 border border-rose-500/40 text-xs text-rose-200 font-semibold">' + escHtml(topic.summaryWarning) + '</div><div class="grid grid-cols-1 md:grid-cols-2 gap-4">' + visualsHtml + '</div>' + videoHtml + '<div class="space-y-4">' + sectionsHtml + '</div></div>';
 
     var backBtn = document.getElementById("back-to-hub-top");
     if (backBtn) backBtn.addEventListener("click", function () { history.pushState("", document.title, window.location.pathname + window.location.search); renderHub(); });

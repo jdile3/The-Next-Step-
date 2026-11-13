@@ -1,12 +1,16 @@
 // The Next Step - Service Worker for Native Android WebAPK & Offline Support
-const CACHE_NAME = 'the-next-step-v4';
+const CACHE_NAME = 'the-next-step-v6';
 const PRECACHE_ASSETS = [
   './',
   './budget.html',
+  './harm-reduction.html',
   './ads-and-links.js',
   './manifest.json',
   './icon-192.png',
-  './icon-512.png'
+  './icon-512.png',
+  './icon-maskable-512.png',
+  './assets/index-BqfrATXR.js',
+  './assets/index-DiHGjP6t.css'
 ];
 
 self.addEventListener('install', (event) => {
@@ -52,21 +56,28 @@ self.addEventListener('fetch', (event) => {
       .then((networkResponse) => {
         if (networkResponse && networkResponse.status === 200) {
           const responseToCache = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, responseToCache);
-          });
+          caches.open(CACHE_NAME)
+            .then((cache) => cache.put(event.request, responseToCache))
+            .catch((err) => console.warn('ServiceWorker cache write error:', err));
         }
         return networkResponse;
       })
-      .catch(() => {
-        return caches.match(event.request).then((cachedResponse) => {
-          if (cachedResponse) {
-            return cachedResponse;
-          }
-          if (event.request.mode === 'navigate') {
-            return caches.match('./budget.html') || caches.match('./');
-          }
-        });
+      .catch(async () => {
+        const cachedResponse = await caches.match(event.request, { ignoreSearch: true });
+        if (cachedResponse) {
+          return cachedResponse;
+        }
+        if (event.request.mode === 'navigate') {
+          return (
+            (await caches.match('./budget.html')) ||
+            (await caches.match('./')) ||
+            new Response('Offline - cached page unavailable.', {
+              status: 503,
+              headers: { 'Content-Type': 'text/plain; charset=utf-8' }
+            })
+          );
+        }
+        return new Response('', { status: 504, statusText: 'Offline' });
       })
   );
 });

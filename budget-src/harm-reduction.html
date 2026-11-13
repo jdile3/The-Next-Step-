@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>THE NEXT STEP | Harm Reduction Information</title>
+  <meta name="description" content="Educational harm reduction and emergency medical reference." />
+  <meta name="theme-color" content="#050b16" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#050b16', midnight: '#071224', vaultCard: '#0a182e',
+            slateIce: '#e8eef4', electric: '#0284c7', skyGlow: '#22d3ee',
+            growth: '#10b981', limeAccent: '#84cc16', goldAccent: '#fbbf24', alertRose: '#f43f5e'
+          },
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #050b16;
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(244, 63, 94, 0.12) 0%, transparent 55%),
+        radial-gradient(circle at 85% 25%, rgba(34, 211, 238, 0.08) 0%, transparent 45%);
+      background-attachment: fixed;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col text-white font-sans antialiased selection:bg-skyGlow selection:text-obsidian overflow-x-hidden">
+
+  <!-- PAGE-LEVEL TRIGGER WARNING GATE -->
+  <div id="hr-gate-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4">
+    <div class="bg-[#081528] border border-rose-500/50 rounded-3xl max-w-md w-full p-6 text-white shadow-2xl space-y-4">
+      <div class="inline-block px-3 py-1 rounded-full bg-rose-500/20 border border-rose-400/40 text-[11px] font-black uppercase tracking-wider text-rose-300">
+        Trigger &amp; Content Warning
+      </div>
+      <h2 class="text-xl font-black text-white">Educational &amp; Medical Reference Only</h2>
+      <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+        This section contains frank harm-reduction diagrams, visual references, and emergency health education. It exists strictly to educate, prevent injury, and save lives—never to glorify or encourage substance use.
+      </p>
+      <div class="flex items-center gap-3 pt-2">
+        <button
+          type="button"
+          id="hr-gate-accept"
+          class="flex-1 py-2.5 px-4 rounded-xl bg-rose-500 hover:bg-rose-400 text-obsidian font-black text-xs cursor-pointer transition"
+        >
+          I Understand — Enter Resource
+        </button>
+        <a
+          href="./index.html"
+          class="py-2.5 px-4 rounded-xl bg-white/10 hover:bg-white/15 text-slate-200 font-bold text-xs text-center transition"
+        >
+          Leave Page
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOP NAVIGATION BAR -->
+  <header class="sticky top-0 z-40 backdrop-blur-xl bg-[#050b16]/85 border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-3">
+      <a href="./index.html" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-2xl p-0.5 bg-gradient-to-tr from-limeAccent via-skyGlow to-growth shrink-0">
+          <img src="./logo-master.jpg" alt="The Next Step Crest" class="w-full h-full object-cover rounded-[14px] bg-obsidian" />
+        </div>
+        <div>
+          <span class="text-lg sm:text-xl font-black tracking-tight text-white block leading-tight">THE NEXT STEP</span>
+          <span class="text-[10px] sm:text-[11px] font-extrabold text-amber-300 tracking-[0.2em] uppercase block">Harm Reduction Education</span>
+        </div>
+      </a>
+      <div class="flex items-center gap-2.5">
+        <a href="./index.html" class="px-4 py-2.5 rounded-full bg-white/8 hover:bg-white/15 border border-white/15 text-slate-200 font-extrabold text-xs sm:text-sm transition-all">
+          ← Back to Website
+        </a>
+        <a href="./budget.html" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-skyGlow via-electric to-growth text-obsidian font-black text-xs sm:text-sm transition-all">
+          Launch Money App ↗
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN WORKSPACE -->
+  <main class="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-10 space-y-6">
+    <section class="rounded-[2rem] bg-gradient-to-b from-[#0c1d36]/95 to-[#050d1a]/95 border border-rose-500/35 p-6 sm:p-9 text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-500/15 border border-rose-400/35 text-[11px] font-extrabold text-rose-300 mb-3">
+        <span>Educational Reference • Not to Glorify or Encourage • Built to Reduce Harm</span>
+      </div>
+      <h1 id="page-main-title" class="text-2xl sm:text-4xl font-black tracking-tight text-white">
+        Harm Reduction &amp; Safety Education
+      </h1>
+      <p id="page-main-subtitle" class="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto mt-2 leading-relaxed">
+        Select a topic below to open visual diagrams, video reference slots, and practical health information.
+      </p>
+    </section>
+
+    <section id="harm-reduction-content" class="rounded-[2rem] bg-gradient-to-b from-[#0c1d36]/85 to-[#061020]/85 border border-white/10 p-5 sm:p-8">
+    </section>
+  </main>
+
+  <footer class="py-8 px-4 sm:px-6 bg-[#030710] border-t border-white/10 text-slate-400 text-xs">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <span><strong class="font-black text-white">THE NEXT STEP</strong> — Educational Harm Reduction Appendix</span>
+      <div>&copy; <span id="year"></span> The Next Step Ecosystem.</div>
+    </div>
+  </footer>
+
+  <script src="./harm-reduction-data.js"></script>
+  <script src="./harm-reduction-ui.js"></script>
+</body>
+</html>

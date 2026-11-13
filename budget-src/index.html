@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>The Next Step - Budgeting</title>
+    <meta name="description" content="A Budgeting APP to help through your life's journey. Protect essentials first. The rest is yours to decide." />
+    <meta name="theme-color" content="#061629" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png" />
+    <link rel="shortcut icon" href="./icon-192.png" />
+    <link rel="manifest" href="./manifest.json" />
+    <meta property="og:title" content="The Next Step - Budgeting" />
+    <meta property="og:description" content="A Budgeting APP to help through your life's journey. Protect essentials first. The rest is yours to decide." />
+    <meta property="og:image" content="./icon-512.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script>
+      (function () {
+        function syncScreenScale() {
+          var w = window.innerWidth || document.documentElement.clientWidth || 390;
+          var h = window.innerHeight || document.documentElement.clientHeight || 844;
+          var isPortrait = h > w * 1.12;
+          var isLargeMode = document.documentElement.classList.contains("large");
+          var mult = isLargeMode ? 1.15 : 1;
+          if (isPortrait) {
+            var widthScale = (w / 382) * 16.5;
+            var heightScale = (h / 810) * 16.8;
+            var basePx = Math.max(16, Math.min(18, widthScale, heightScale * 1.08));
+            document.documentElement.style.fontSize = (basePx * mult).toFixed(2) + "px";
+          } else {
+            document.documentElement.style.fontSize = isLargeMode ? "19px" : "16px";
+          }
+        }
+        syncScreenScale();
+        window.addEventListener("resize", syncScreenScale);
+        window.addEventListener("orientationchange", syncScreenScale);
+        window.__TNS_SYNC_SCALE__ = syncScreenScale;
+      })();
+    </script>
+
+    <!-- ==========================================================================
+         EASY EDIT CONFIG (EDIT YOUR LINKS RIGHT HERE ON GITHUB!)
+         ========================================================================== -->
+    <script>
+      window.TNS_MONETIZATION_CONFIG = {
+        // 1. Your Stripe Payment Link (Paste your Stripe checkout URL inside the quotes when ready)
+        STRIPE_PAYMENT_LINK_URL: "https://buy.stripe.com/3cIfZiaWi0MYaBz8YNfjG00",
+
+        // 2. Your Live Website URL (Optional: Paste your GitHub Pages or domain URL here)
+        OFFICIAL_WEBSITE_URL: "https://jdile3.github.io/The-Next-Step-/",
+
+        // 3. Google AdSense (Optional: Set enabled to true and paste your IDs when ready)
+        ADSENSE_CONFIG: {
+          enabled: false,
+          publisherId: "ca-pub-0000000000000000",
+          bannerSlotId: "0000000000"
+        },
+
+        // 4. Rotating Banner Ads (Paste your referral or sponsor links inside ctaUrl: "")
+        SPONSOR_BANNERS: [
+          {
+            id: "sponsor-cashback-gas",
+            tag: "Featured Partner",
+            title: "Save Up to 25¢/Gal on Gas & Groceries",
+            description: "Earn automatic cash back at Shell, Circle K, Speedway, and local grocery stores.",
+            ctaText: "Claim Free Bonus",
+            ctaUrl: "" // <-- PASTE YOUR REFERRAL OR SPONSOR LINK HERE
+          },
+          {
+            id: "sponsor-high-yield",
+            tag: "Smart Money Partner",
+            title: "Stop Getting Paid 0.01% by Your Bank",
+            description: "Get paid up to 2 days early with zero monthly maintenance or overdraft fees.",
+            ctaText: "Learn More",
+            ctaUrl: "" // <-- PASTE YOUR REFERRAL OR SPONSOR LINK HERE
+          },
+          {
+            id: "sponsor-tns-pro",
+            tag: "The Next Step Pro",
+            title: "Remove All Ads & Unlock Unlimited Accounts",
+            description: "One-time $6.99 lifetime unlock. Zero monthly subscriptions. 100% private.",
+            ctaText: "Unlock Pro",
+            ctaUrl: "INTERNAL_UPGRADE"
+          }
+        ],
+
+        // 5. Post-Trial (Day 31+) 5-Second Commercial Break Ad
+        VIDEO_AD_CONFIG: {
+          id: "video-ad-post-trial",
+          enabled: true,
+          sponsorName: "The Next Step · Sponsored Message",
+          headline: "Your 30-Day Free Trial Has Ended",
+          subheadline: "You are currently using the ad-supported Free Tier (2 accounts max). Watch this 5-second message to continue for free, or unlock Lifetime Pro to remove all video & banner ads forever.",
+          bullets: [
+            "Unlimited Checking, Savings, Cash App & Card Accounts",
+            "Full Recurring Bill Calendar, Goals & Reality Check Mirror",
+            "100% Ad-Free Forever — Zero Monthly Subscriptions"
+          ],
+          videoMp4Url: "", // <-- Optional: paste a direct .mp4 video ad link here
+          ctaText: "Remove All Ads Forever",
+          ctaUrl: "INTERNAL_UPGRADE", // <-- Or paste a sponsor link here
+          skipDelaySeconds: 5,
+          cooldownMinutes: 4
+        }
+      };
+    </script>
+    <script src="./ads-and-links.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

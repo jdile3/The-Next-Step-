@@ -9,9 +9,7 @@
 
 window.TNS_MONETIZATION_CONFIG = {
   // 1. YOUR STRIPE PAYMENT LINK (One-Time Pro Lifetime Checkout)
-  // When ready, paste your Stripe Payment Link inside the quotes below.
-  // In Stripe Dashboard -> "After payment" -> Redirect to:
-  //   https://YOUR-WEBSITE-URL/budget.html?tns_unlock=TNS_STRIPE_VERIFIED_2026
+  // Configure your post-payment redirect URL inside the Stripe Dashboard.
   STRIPE_PAYMENT_LINK_URL: "https://buy.stripe.com/3cIfZiaWi0MYaBz8YNfjG00",
 
   // 2. YOUR OFFICIAL WEBSITE / APP URL (For QR Codes & Share Links)
